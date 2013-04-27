@@ -13,7 +13,7 @@ import org.apache.log4j.PatternLayout
 // }
 
 
-grails.project.groupId = "com.${appName}" // change this to alter the default package name and Maven publishing destination
+grails.project.groupId = "com.pg.${appName}" // change this to alter the default package name and Maven publishing destination
 grails.mime.file.extensions = true // enables the parsing of file extensions from URLs into the request format
 grails.mime.use.accept.header = false
 grails.mime.types = [ html: ['text/html','application/xhtml+xml'],
@@ -71,7 +71,7 @@ environments {
     }
     production {
         grails.logging.jul.usebridge = false
-        grails.serverURL = "http://twitter.meudaypratap.cloudbees.net"
+        grails.serverURL = "http://accounts.meudaypratap.cloudbees.net"
     }
 }
 
