@@ -25,6 +25,6 @@ class HomeController {
             }
             userPayments[receiver] = paymentAmounts
         }
-        render(view: '/index', model: [users: users, userPayments: userPayments])
+        render(view: 'index', model: [users: users, userPayments: userPayments])
     }
 }

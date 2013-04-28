@@ -42,6 +42,19 @@ class User {
         password = springSecurityService.encodePassword(password)
     }
 
+    List<User> fetchFriends(){
+        return Friend.createCriteria().list{
+            projections {
+                property('friend')
+                property('createdBy')
+            }
+            or{
+                eq('createdBy',this)
+                eq('friend',this)
+            }
+        }.flatten().unique()
+    }
+
     String toString() {
         return username
     }

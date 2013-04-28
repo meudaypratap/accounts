@@ -38,6 +38,7 @@
                     <ul class="nav">
                         <li><g:link controller="expense">Expense</g:link></li>
                         <li><g:link controller="payment">Payment</g:link></li>
+                        <li><g:link controller="friend">Friends</g:link></li>
                         <sec:ifAllGranted roles="ROLE_ADMIN">
                             <li><g:link controller="user">User</g:link></li>
                             <li><g:link controller="userRole">User Role</g:link></li>
@@ -59,13 +60,13 @@
     <div class="container-fluid">
         <div class="row-fluid">
             <g:if test="${flash.message}">
-                <div class="alert alert-error no-margin">
+                <div class="alert alert-success no-margin">
                     <button type="button" class="close" data-dismiss="alert">×</button>
                     ${flash.message}
                 </div>
             </g:if>
             <g:if test="${flash.error}">
-                <div class="alert alert-success no-margin">
+                <div class="alert alert-error no-margin">
                     <button type="button" class="close" data-dismiss="alert">×</button>
                     ${flash.error}
                 </div>

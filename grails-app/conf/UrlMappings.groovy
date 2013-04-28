@@ -10,6 +10,10 @@ class UrlMappings {
         "/" {
             controller = 'login'
         }
+        "/search" {
+            controller = 'friend'
+            action = 'search'
+        }
         "500"(view: '/error')
     }
 }

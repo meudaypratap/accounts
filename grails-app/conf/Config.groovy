@@ -112,10 +112,12 @@ grails.plugins.springsecurity.securityConfigType = "InterceptUrlMap"
 grails.plugins.springsecurity.interceptUrlMap  = [
         '/expense/**': ['IS_AUTHENTICATED_FULLY'],
         '/payment/**': ['IS_AUTHENTICATED_FULLY'],
-        '/console/**': ['ROLE_Admin'],
-        '/role/**': ['ROLE_Admin'],
-        '/userRole/**': ['ROLE_Admin'],
-        '/user/delete': ['ROLE_Admin'],
-        '/user/update': ['ROLE_Admin']
+        '/friend/**': ['IS_AUTHENTICATED_FULLY'],
+        '/search/**': ['IS_AUTHENTICATED_FULLY'],
+        '/console/**': ['ROLE_ADMIN'],
+        '/role/**': ['ROLE_ADMIN'],
+        '/userRole/**': ['ROLE_ADMIN'],
+        '/user/delete': ['ROLE_ADMIN'],
+        '/user/update': ['ROLE_ADMIN']
 ]
 
