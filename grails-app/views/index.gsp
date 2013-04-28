@@ -6,15 +6,37 @@
 </head>
 
 <body>
-<g:set var="appName" value="${grails.util.GrailsNameUtils.getNaturalName(g.meta(name: 'app.name'))}" scope="page"/>
-<div class="span4">
-        <login></login>
-        <signup></signup>
-</div>
+<g:if test="${users}">
+    <table class="table table-bordered table-striped table-condensed">
+        <tr>
+            <td>Payer</td>
+            <g:each in="${users}" var="user">
+                <td rowspan="2">${user.name}</td>
+            </g:each>
+        </tr>
+        <tr>
+            <td>Receiver</td>
 
-<div class="span8">
-       <tweets></tweets>
-</div>
+        </tr>
+        <tbody>
+        <g:each in="${userPayments}" var="userPayment">
+            <tr>
+                <td>${userPayment.key.name}</td>
+                <g:each in="${userPayment.value}" var="amount">
+                    <td>${amount}</td>
+                </g:each>
+            </tr>
+        </g:each>
+        </tbody>
 
+    </table>
+</g:if>
+<g:else>
+    <div class="alert alert-info">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <h4>Warning!</h4>
+        There are no users for now, create users to use this application.
+    </div>
+</g:else>
 </body>
 </html>

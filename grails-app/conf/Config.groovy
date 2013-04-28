@@ -37,7 +37,9 @@ grails.mime.types = [ html: ['text/html','application/xhtml+xml'],
 grails.resources.adhoc.patterns = ['/images/*', '/css/*', '/js/*', '/plugins/*']
 //amelia,cerulean,united,spacelab,spruce  http://bootswatch.com/
 bootstrap.theme = "cerulean"
-
+grails.gorm.default.constraints = {
+    requiredChar(nullable: false, blank: false)
+}
 //grails.sitemesh.default.layout = 'book'
 // The default codec used to encode data with ${}
 grails.views.default.codec = "none" // none, html, base64
@@ -91,6 +93,7 @@ log4j = {
             'org.springframework',
             'org.hibernate',
             'net.sf.ehcache.hibernate'
+    info "grails.app"
 }
 simian {
     reportsDir = "target/simian-reports"

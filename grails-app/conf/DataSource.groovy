@@ -15,12 +15,12 @@ hibernate {
 environments {
     development {
         dataSource {
-            dbCreate = 'create-drop' // one of 'create', 'create-drop', 'update', 'validate', ''
-            url = 'jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000'
-
-            // Uncomment the following line to see what SQL queries are
-            // being sent to the database.
-//			logSql = true
+            dbCreate = 'update' // one of 'create', 'create-drop', 'update', 'validate', ''
+            driverClassName = "com.mysql.jdbc.Driver"
+            dialect = 'org.hibernate.dialect.MySQL5InnoDBDialect' // must be set for transactions to work!
+            username = "root"
+            password = "igdefault"
+            url = "jdbc:mysql://localhost:3306/accounts?autoReconnect=true&useUnicode=yes&characterEncoding=UTF-8"
         }
     }
     test {

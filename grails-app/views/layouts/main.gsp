@@ -29,6 +29,11 @@
         <div class="container">
             <div class="container-fluid">
                 <a class="brand" href="${createLink(uri: '/')}">${appName}</a>
+                <ul class="nav">
+                    <li ><g:link controller="expense">Expense</g:link> </li>
+                    <li ><g:link controller="payment">Payment</g:link> </li>
+                    <li ><g:link controller="user">User</g:link> </li>
+                </ul>
             </div>
         </div>
     </div>
@@ -39,13 +44,13 @@
     <div class="container-fluid">
         <div class="row-fluid">
             <g:if test="${flash.message}">
-                <div class="alert alert-error">
+                <div class="alert alert-error no-margin">
                     <button type="button" class="close" data-dismiss="alert">×</button>
                     ${flash.message}
                 </div>
             </g:if>
             <g:if test="${flash.error}">
-                <div class="alert alert-success">
+                <div class="alert alert-success no-margin">
                     <button type="button" class="close" data-dismiss="alert">×</button>
                     ${flash.error}
                 </div>
