@@ -8,7 +8,6 @@ target
 /plugins
 /web-app/plugins
 /web-app/WEB-INF/classes
-.classpath
 .idea/
 .project
 cobertura.ser
@@ -16,9 +15,6 @@ cobertura.ser
 **/*iws
 **/*iml
 .settings
-.classpath
-.project
-.idea
 *.iml
 *.log
 /*DB.*
