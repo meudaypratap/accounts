@@ -8,6 +8,7 @@ class Payment {
     User paidBy
     User receivedBy
     Integer amount
+    Date paymentDate
     Date dateCreated
     Date lastUpdated
 

@@ -7,6 +7,7 @@ class Expense {
     String title
     Integer amount
     User paidBy
+    Date expenseDate
     Date dateCreated
     Date lastUpdated
 

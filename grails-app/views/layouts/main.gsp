@@ -38,7 +38,10 @@
                     <ul class="nav">
                         <li><g:link controller="expense">Expense</g:link></li>
                         <li><g:link controller="payment">Payment</g:link></li>
-                        <li><g:link controller="user">User</g:link></li>
+                        <sec:ifAllGranted roles="ROLE_ADMIN">
+                            <li><g:link controller="user">User</g:link></li>
+                            <li><g:link controller="userRole">User Role</g:link></li>
+                        </sec:ifAllGranted>
                     </ul>
                     <ul class="nav pull-right">
                         <li><a href="#"><sec:loggedInUserInfo field="username"/></a></li>

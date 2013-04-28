@@ -107,3 +107,15 @@ grails.plugins.springsecurity.userLookup.userDomainClassName = 'com.pg.accounts.
 grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'com.pg.accounts.UserRole'
 grails.plugins.springsecurity.authority.className = 'com.pg.accounts.Role'
 grails.plugins.springsecurity.successHandler.defaultTargetUrl= '/home'
+grails.plugins.springsecurity.securityConfigType = "InterceptUrlMap"
+
+grails.plugins.springsecurity.interceptUrlMap  = [
+        '/expense/**': ['IS_AUTHENTICATED_FULLY'],
+        '/payment/**': ['IS_AUTHENTICATED_FULLY'],
+        '/console/**': ['ROLE_Admin'],
+        '/role/**': ['ROLE_Admin'],
+        '/userRole/**': ['ROLE_Admin'],
+        '/user/delete': ['ROLE_Admin'],
+        '/user/update': ['ROLE_Admin']
+]
+
