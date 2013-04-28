@@ -55,6 +55,7 @@ grails.project.dependency.resolution = {
         compile ":codenarc:0.18.1"
         compile ":console:1.2"
         compile ":gmetrics:0.3.1"
+        compile ':spring-security-core:1.2.7.3'
         runtime ":hibernate:$grailsVersion"
         runtime ":jquery:1.8.0"
         runtime ":resources:1.1.6"

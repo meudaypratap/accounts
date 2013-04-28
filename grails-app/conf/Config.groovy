@@ -102,3 +102,8 @@ simian {
             , excludes: "**/*Spec.groovy **/Config.groovy"]
     methodParams = [threshold: 3]
 }
+// Added by the Spring Security Core plugin:
+grails.plugins.springsecurity.userLookup.userDomainClassName = 'com.pg.accounts.User'
+grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'com.pg.accounts.UserRole'
+grails.plugins.springsecurity.authority.className = 'com.pg.accounts.Role'
+grails.plugins.springsecurity.successHandler.defaultTargetUrl= '/home'

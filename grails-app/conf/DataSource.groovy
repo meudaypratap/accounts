@@ -20,7 +20,7 @@ environments {
             dialect = 'org.hibernate.dialect.MySQL5InnoDBDialect' // must be set for transactions to work!
             username = "root"
             password = "igdefault"
-            url = "jdbc:mysql://localhost:3306/accounts?autoReconnect=true&useUnicode=yes&characterEncoding=UTF-8"
+            url = "jdbc:mysql://localhost:3306/account?autoReconnect=true&useUnicode=yes&characterEncoding=UTF-8"
         }
     }
     test {

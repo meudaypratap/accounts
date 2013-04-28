@@ -27,14 +27,26 @@
 <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container">
-            <div class="container-fluid">
-                <a class="brand" href="${createLink(uri: '/')}">${appName}</a>
-                <ul class="nav">
-                    <li ><g:link controller="expense">Expense</g:link> </li>
-                    <li ><g:link controller="payment">Payment</g:link> </li>
-                    <li ><g:link controller="user">User</g:link> </li>
-                </ul>
-            </div>
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <a class="brand" href="${createLink(uri: '/')}">${appName}</a>
+            <sec:ifLoggedIn>
+                <div class="nav-collapse collapse">
+                    <ul class="nav">
+                        <li><g:link controller="expense">Expense</g:link></li>
+                        <li><g:link controller="payment">Payment</g:link></li>
+                        <li><g:link controller="user">User</g:link></li>
+                    </ul>
+                    <ul class="nav pull-right">
+                        <li><a href="#"><sec:loggedInUserInfo field="username"/></a></li>
+                        <li><g:link controller="logout">Logout</g:link></li>
+                    </ul>
+                </div>
+            </sec:ifLoggedIn>
+
         </div>
     </div>
 </div>

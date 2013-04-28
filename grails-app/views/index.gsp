@@ -11,7 +11,7 @@
         <tr>
             <td>Payer</td>
             <g:each in="${users}" var="user">
-                <td rowspan="2">${user.name}</td>
+                <td rowspan="2">${user.username}</td>
             </g:each>
         </tr>
         <tr>
@@ -21,7 +21,7 @@
         <tbody>
         <g:each in="${userPayments}" var="userPayment">
             <tr>
-                <td>${userPayment.key.name}</td>
+                <td>${userPayment.key.username}</td>
                 <g:each in="${userPayment.value}" var="amount">
                     <td>${amount}</td>
                 </g:each>
@@ -33,7 +33,6 @@
 </g:if>
 <g:else>
     <div class="alert alert-info">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
         <h4>Warning!</h4>
         There are no users for now, create users to use this application.
     </div>
