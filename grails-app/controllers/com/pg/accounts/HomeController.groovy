@@ -42,4 +42,16 @@ class HomeController extends ApplicationController {
         }
         redirect(action: 'changePassword')
     }
+
+    def signup() {
+        User user = new User(params)
+        user.enabled = true
+        if (user.save()) {
+            springSecurityService.reauthenticate(user.username)
+            flash.message = "You are successfully registered."
+            redirect(uri: '/')
+        } else {
+            render(view: '/login/auth', model: [user: user])
+        }
+    }
 }

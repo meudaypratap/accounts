@@ -8,7 +8,6 @@ body {
 }
 .no-margin{margin-left: 0 !important}
 .form-signin {
-    max-width: 300px;
     padding: 19px 29px 29px;
     margin: 0 auto 20px;
     background-color: #fff;
