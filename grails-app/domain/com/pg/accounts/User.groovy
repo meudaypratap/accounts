@@ -1,5 +1,7 @@
 package com.pg.accounts
 
+import org.springframework.security.core.context.SecurityContextHolder as SCH
+
 class User {
 
     transient springSecurityService
@@ -42,17 +44,26 @@ class User {
         password = springSecurityService.encodePassword(password)
     }
 
-    List<User> fetchFriends(){
-        return Friend.createCriteria().list{
+    List<User> fetchFriends() {
+        return Friend.createCriteria().list {
             projections {
                 property('friend')
                 property('createdBy')
             }
-            or{
-                eq('createdBy',this)
-                eq('friend',this)
+            or {
+                eq('createdBy', this)
+                eq('friend', this)
             }
-        }.flatten().unique().sort{it.username}
+        }.flatten().unique().sort { it.username }
+    }
+
+    static User getLoggedInUser() {
+        Long userId = SCH.context?.authentication?.principal?.id
+        return userId ? User.get(userId) : null
+    }
+
+    static List<User> getLoggedInUserFriends() {
+        return loggedInUser ? loggedInUser.fetchFriends() : []
     }
 
     String toString() {
