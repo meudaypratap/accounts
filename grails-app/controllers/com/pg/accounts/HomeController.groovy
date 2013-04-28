@@ -1,6 +1,6 @@
 package com.pg.accounts
 
-class HomeController extends ApplicationController{
+class HomeController extends ApplicationController {
 
     def index() {
         User user = getLoggedInUser()
@@ -28,5 +28,18 @@ class HomeController extends ApplicationController{
             userPayments[receiver] = paymentAmounts
         }
         render(view: 'index', model: [users: users, userPayments: userPayments])
+    }
+
+    def changePassword() {}
+
+    def updatePassword(String oldPassword, String newPassword) {
+        User user = getLoggedInUser()
+        if (springSecurityService.encodePassword(oldPassword) == user.password) {
+            user.password = newPassword
+            flash.message = "Password updated successfully"
+        } else {
+            flash.error = "Invalid old password"
+        }
+        redirect(action: 'changePassword')
     }
 }

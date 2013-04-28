@@ -45,8 +45,16 @@
                         </sec:ifAllGranted>
                     </ul>
                     <ul class="nav pull-right">
-                        <li><a href="#"><sec:loggedInUserInfo field="username"/></a></li>
-                        <li><g:link controller="logout">Logout</g:link></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><sec:loggedInUserInfo field="username"/><b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><g:link controller="home" action="changePassword">Change password</g:link> </li>
+                                <li><g:link controller="logout">Logout</g:link> </li>
+
+                            </ul>
+                        </li>
+
                     </ul>
                 </div>
             </sec:ifLoggedIn>
