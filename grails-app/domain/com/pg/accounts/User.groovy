@@ -52,7 +52,7 @@ class User {
                 eq('createdBy',this)
                 eq('friend',this)
             }
-        }.flatten().unique()
+        }.flatten().unique().sort{it.username}
     }
 
     String toString() {

@@ -34,7 +34,7 @@
 <g:else>
     <div class="alert alert-info">
         <h4>Warning!</h4>
-        There are no users for now, create users to use this application.
+        There are no friends for now, add friends to use this application.
     </div>
 </g:else>
 </body>

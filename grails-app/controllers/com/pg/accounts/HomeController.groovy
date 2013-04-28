@@ -1,9 +1,11 @@
 package com.pg.accounts
 
-class HomeController {
+class HomeController extends ApplicationController{
 
     def index() {
-        List<User> users = User.list([sort: 'username'])
+        User user = getLoggedInUser()
+
+        List<User> users = user.fetchFriends()
         Map<User, List<Integer>> userPayments = [:]
         users.each { User receiver ->
             List paymentAmounts = []

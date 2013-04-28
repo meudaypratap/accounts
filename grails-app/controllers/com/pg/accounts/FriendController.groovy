@@ -2,11 +2,10 @@ package com.pg.accounts
 
 import org.springframework.dao.DataIntegrityViolationException
 
-class FriendController {
-    def springSecurityService
+class FriendController extends ApplicationController {
 
     def index() {
-        User user = loggedInUser
+        User user = getLoggedInUser()
         List<User> friends = user.fetchFriends()
         List<User> users = friends - user
         render view: 'index', model: [loggedInUser: user, friends: friends, users: users]
@@ -45,9 +44,4 @@ class FriendController {
         redirect(action: 'index')
     }
 
-    private User getLoggedInUser() {
-        Long loggedInUserId = springSecurityService.getPrincipal().id
-        User user = User.get(loggedInUserId)
-        return user
-    }
 }
