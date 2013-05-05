@@ -36,9 +36,6 @@
             <sec:ifLoggedIn>
                 <div class="nav-collapse collapse">
                     <ul class="nav">
-                        <li><g:link controller="expense">Expense</g:link></li>
-                        <li><g:link controller="payment">Payment</g:link></li>
-                        <li><g:link controller="friend">Friends</g:link></li>
                         <sec:ifAllGranted roles="ROLE_ADMIN">
                             <li><g:link controller="user">User</g:link></li>
                             <li><g:link controller="userRole">User Role</g:link></li>
@@ -49,7 +46,7 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><sec:loggedInUserInfo field="username"/><b class="caret"></b>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><g:link controller="home" action="changePassword">Change password</g:link> </li>
+                                <li><g:link controller="profile">Profile</g:link> </li>
                                 <li><g:link controller="logout">Logout</g:link> </li>
 
                             </ul>
@@ -68,18 +65,18 @@
     <div class="container-fluid">
         <div class="row-fluid">
             <g:if test="${flash.message}">
-                <div class="alert alert-success no-margin">
+                <div class="alert alert-success no-margin-left">
                     <button type="button" class="close" data-dismiss="alert">×</button>
                     ${flash.message}
                 </div>
             </g:if>
             <g:if test="${flash.error}">
-                <div class="alert alert-error no-margin">
+                <div class="alert alert-error no-margin-left">
                     <button type="button" class="close" data-dismiss="alert">×</button>
                     ${flash.error}
                 </div>
             </g:if>
-            <div class="span12 no-margin">
+            <div class="span12 no-margin-left">
                 <g:layoutBody/>
             </div>
         </div>

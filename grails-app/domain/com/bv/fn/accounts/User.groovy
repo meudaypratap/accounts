@@ -1,4 +1,4 @@
-package com.pg.accounts
+package com.bv.fn.accounts
 
 import org.springframework.security.core.context.SecurityContextHolder as SCH
 
@@ -44,26 +44,13 @@ class User {
         password = springSecurityService.encodePassword(password)
     }
 
-    List<User> fetchFriends() {
-        return Friend.createCriteria().list {
-            projections {
-                property('friend')
-                property('createdBy')
-            }
-            or {
-                eq('createdBy', this)
-                eq('friend', this)
-            }
-        }.flatten().unique().sort { it.username }
-    }
-
     static User getLoggedInUser() {
         Long userId = SCH.context?.authentication?.principal?.id
         return userId ? User.get(userId) : null
     }
 
-    static List<User> getLoggedInUserFriends() {
-        return loggedInUser ? loggedInUser.fetchFriends() : []
+    Boolean validatePassword(String password){
+       return springSecurityService.encodePassword(this.password) == password
     }
 
     String toString() {

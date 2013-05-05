@@ -8,7 +8,7 @@
 <g:hasErrors bean="${user}">
     <div class="alert alert-error">
         <button type="button" class="close" data-dismiss="alert">×</button>
-        <ul class="unstyled no-margin">
+        <ul class="unstyled no-margin-left">
             <g:eachError bean="${user}" var="error">
                 <li><g:message error="${error}"/></li>
             </g:eachError>
@@ -16,7 +16,7 @@
     </div>
 </g:hasErrors>
 
-<div class="span6 no-margin">
+<div class="span6 no-margin-left">
     <form action='${postUrl}' method='POST' id='loginForm' class='form-signin well well-small' autocomplete='off'>
         <h4><g:message code="springSecurity.login.header"/></h4>
         <hr/>

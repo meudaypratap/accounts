@@ -6,7 +6,8 @@ body {
 .sidebar-nav {
     padding: 9px 0;
 }
-.no-margin{margin-left: 0 !important}
+.no-margin-left {margin-left: 0 !important}
+.no-bottom-margin{margin-bottom: 0 !important}
 .form-signin {
     padding: 19px 29px 29px;
     margin: 0 auto 20px;

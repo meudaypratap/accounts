@@ -1,4 +1,4 @@
-package com.pg.accounts
+package com.bv.fn.accounts
 
 import org.codehaus.groovy.grails.plugins.springsecurity.SpringSecurityUtils
 

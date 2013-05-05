@@ -1,4 +1,4 @@
-package com.pg.accounts
+package com.bv.fn.accounts
 
 class UserRoleController {
     static scaffold = UserRole
