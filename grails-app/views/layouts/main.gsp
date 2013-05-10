@@ -46,8 +46,8 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><sec:loggedInUserInfo field="username"/><b class="caret"></b>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><g:link controller="profile">Profile</g:link> </li>
-                                <li><g:link controller="logout">Logout</g:link> </li>
+                                <li><g:link controller="profile"><i class="icon-user"></i> Profile</g:link> </li>
+                                <li><g:link controller="logout"><i class="icon-off"></i> Logout</g:link> </li>
 
                             </ul>
                         </li>

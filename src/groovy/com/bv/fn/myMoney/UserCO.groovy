@@ -1,4 +1,4 @@
-package com.bv.fn.accounts
+package com.bv.fn.myMoney
 
 import grails.validation.Validateable
 

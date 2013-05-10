@@ -1,6 +1,6 @@
-import com.bv.fn.accounts.Role
-import com.bv.fn.accounts.User
-import com.bv.fn.accounts.UserRole
+import com.bv.fn.myMoney.Role
+import com.bv.fn.myMoney.User
+import com.bv.fn.myMoney.UserRole
 
 class BootStrap {
 
