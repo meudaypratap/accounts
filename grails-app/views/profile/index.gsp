@@ -45,7 +45,7 @@
                 Email
             </label></td>
             <td>
-                <g:textField name="email" value="${com.bv.fn.myMoney.User.loggedInUser.email}"/>
+                <g:textField name="email" value="${com.bv.fn.moneyEye.User.loggedInUser.email}"/>
             </td>
         </tr>
 

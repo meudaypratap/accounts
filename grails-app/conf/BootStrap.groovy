@@ -1,6 +1,6 @@
-import com.bv.fn.myMoney.Role
-import com.bv.fn.myMoney.User
-import com.bv.fn.myMoney.UserRole
+import com.bv.fn.moneyEye.Role
+import com.bv.fn.moneyEye.User
+import com.bv.fn.moneyEye.UserRole
 
 class BootStrap {
 

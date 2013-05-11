@@ -1,4 +1,4 @@
-package com.bv.fn.myMoney
+package com.bv.fn.moneyEye
 
 import org.apache.commons.lang.builder.HashCodeBuilder
 

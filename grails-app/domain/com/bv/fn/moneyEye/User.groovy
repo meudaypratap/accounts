@@ -1,4 +1,4 @@
-package com.bv.fn.myMoney
+package com.bv.fn.moneyEye
 
 import org.springframework.security.core.context.SecurityContextHolder as SCH
 
