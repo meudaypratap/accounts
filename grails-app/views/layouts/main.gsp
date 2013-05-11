@@ -13,13 +13,9 @@
            scope="page"/>
     <title>${appName} | <g:layoutTitle/></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="${resource(dir: 'css', file: 'custom.css')}"/>
-    <link rel="stylesheet" href="${resource(dir: 'css', file: 'bootstrap' + bootstrapTheme + '.css')}"/>
-    <link rel="stylesheet" href="${resource(dir: 'css', file: 'bootstrap-responsive.css')}"/>
-    <script type="text/javascript" src="${resource(dir: 'js', file: 'jquery-1.8.0.js')}"></script>
-    <script type="text/javascript" src="${resource(dir: 'js', file: 'bootstrap.js')}"></script>
-    <script type="text/javascript" src="${resource(dir: 'js', file: 'application.js')}"></script>
     <g:layoutHead/>
+    <link rel="stylesheet" href="${resource(dir: 'css', file: 'bootstrap' + bootstrapTheme + '.css')}"/>
+    <g:javascript library="application"/>
     <r:layoutResources/>
 </head>
 
@@ -27,11 +23,15 @@
 <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container">
-            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </a>
+            <sec:ifLoggedIn>
+
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+            </sec:ifLoggedIn>
+
             <a class="brand" href="${createLink(uri: '/')}">${appName}</a>
             <sec:ifLoggedIn>
                 <div class="nav-collapse collapse">
@@ -46,8 +46,8 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><sec:loggedInUserInfo field="username"/><b class="caret"></b>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><g:link controller="profile"><i class="icon-user"></i> Profile</g:link> </li>
-                                <li><g:link controller="logout"><i class="icon-off"></i> Logout</g:link> </li>
+                                <li><g:link controller="profile"><i class="icon-user"></i> Profile</g:link></li>
+                                <li><g:link controller="logout"><i class="icon-off"></i> Logout</g:link></li>
 
                             </ul>
                         </li>
@@ -86,5 +86,6 @@
         </footer>
     </div>
 </div>
+<r:layoutResources/>
 </body>
 </html>

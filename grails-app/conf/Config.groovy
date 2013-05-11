@@ -109,6 +109,8 @@ grails.plugins.springsecurity.successHandler.defaultTargetUrl= '/home'
 grails.plugins.springsecurity.securityConfigType = "InterceptUrlMap"
 
 grails.plugins.springsecurity.interceptUrlMap  = [
+        '/home/**': ['IS_AUTHENTICATED_FULLY'],
+        '/signup': ['IS_AUTHENTICATED_ANONYMOUSLY'],
         '/console/**': ['ROLE_ADMIN'],
         '/role/**': ['ROLE_ADMIN'],
         '/userRole/**': ['ROLE_ADMIN'],

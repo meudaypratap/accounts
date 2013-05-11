@@ -12,7 +12,10 @@ class BootStrap {
         }
         Role adminRole = Role.findOrSaveByAuthority(adminAuthority)
         UserRole.findOrSaveByUserAndRole(adminUser, adminRole)
-
+        User user = User.findByUsername('user')
+        if (!user) {
+            new User(username: 'user', password: 'user', enabled: true).save()
+        }
     }
     def destroy = {
     }

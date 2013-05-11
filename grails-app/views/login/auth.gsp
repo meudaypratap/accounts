@@ -17,7 +17,7 @@
 </g:hasErrors>
 
 <div class="span6 no-margin-left">
-    <form action='${postUrl}' method='POST' id='loginForm' class='form-signin well well-small' autocomplete='off'>
+    <form action='${postUrl}' method='POST' class='form-signin well well-small' autocomplete='off'>
         <h4><g:message code="springSecurity.login.header"/></h4>
         <hr/>
         <label for='username'><g:message code="springSecurity.login.username.label"/><span class="required-indicator">*</span></label>
@@ -35,7 +35,7 @@
 </div>
 
 <div class="span6">
-    <g:form controller="home" action="signup" method='POST' id='signupForm' class='form-signin well well-small' autocomplete='off'>
+    <g:form url="/signup" method='POST' class='form-signin well well-small' autocomplete='off'>
         <h4>Sign up</h4>
         <hr/>
         <label for='username'><g:message code="springSecurity.login.username.label"/><span class="required-indicator">*</span></label>
