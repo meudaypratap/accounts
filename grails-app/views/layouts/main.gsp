@@ -13,79 +13,75 @@
            scope="page"/>
     <title>${appName} | <g:layoutTitle/></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <g:layoutHead/>
+    <link rel="stylesheet" href="${resource(dir: 'css', file: 'custom.css')}"/>
     <link rel="stylesheet" href="${resource(dir: 'css', file: 'bootstrap' + bootstrapTheme + '.css')}"/>
-    <g:javascript library="application"/>
+    <link rel="stylesheet" href="${resource(dir: 'css', file: 'bootstrap-responsive.css')}"/>
+    <script type="text/javascript" src="${resource(dir: 'js', file: 'jquery-1.8.0.js')}"></script>
+    <script type="text/javascript" src="${resource(dir: 'js', file: 'bootstrap.js')}"></script>
+    <g:javascript src="ang.js"/>
+    <script type="text/javascript" src="${resource(dir: 'js', file: 'application.js')}"></script>
+    <g:layoutHead/>
     <r:layoutResources/>
 </head>
 
 <body>
-<div class="navbar navbar-inverse navbar-fixed-top">
-    <div class="navbar-inner">
-        <div class="container">
-            <sec:ifLoggedIn>
+<div ng-app="moneyEye">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <sec:ifLoggedIn>
 
-                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </a>
-            </sec:ifLoggedIn>
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                </sec:ifLoggedIn>
 
-            <a class="brand" href="${createLink(uri: '/')}">${appName}</a>
-            <sec:ifLoggedIn>
-                <div class="nav-collapse collapse">
-                    <ul class="nav">
-                        <sec:ifAllGranted roles="ROLE_ADMIN">
-                            <li><g:link controller="user">User</g:link></li>
-                            <li><g:link controller="userRole">User Role</g:link></li>
-                        </sec:ifAllGranted>
-                    </ul>
-                    <ul class="nav pull-right">
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><sec:loggedInUserInfo field="username"/><b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><g:link controller="profile"><i class="icon-user"></i> Profile</g:link></li>
-                                <li><g:link controller="logout"><i class="icon-off"></i> Logout</g:link></li>
+                <a class="brand" href="${createLink(uri: '/')}">${appName}</a>
+                <sec:ifLoggedIn>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav">
+                            <sec:ifAllGranted roles="ROLE_ADMIN">
+                                <li><g:link controller="user">User</g:link></li>
+                                <li><g:link controller="userRole">User Role</g:link></li>
+                            </sec:ifAllGranted>
+                        </ul>
+                        <ul class="nav pull-right">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><sec:loggedInUserInfo field="username"/><b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><g:link controller="profile"><i class="icon-user"></i> Profile</g:link></li>
+                                    <li><g:link controller="logout"><i class="icon-off"></i> Logout</g:link></li>
 
-                            </ul>
-                        </li>
+                                </ul>
+                            </li>
 
-                    </ul>
-                </div>
-            </sec:ifLoggedIn>
+                        </ul>
+                    </div>
+                </sec:ifLoggedIn>
 
-        </div>
-    </div>
-</div>
-
-<div class="container">
-
-    <div class="container-fluid">
-        <div class="row-fluid">
-            <g:if test="${flash.message}">
-                <div class="alert alert-success no-margin-left">
-                    <button type="button" class="close" data-dismiss="alert">×</button>
-                    ${flash.message}
-                </div>
-            </g:if>
-            <g:if test="${flash.error}">
-                <div class="alert alert-error no-margin-left">
-                    <button type="button" class="close" data-dismiss="alert">×</button>
-                    ${flash.error}
-                </div>
-            </g:if>
-            <div class="span12 no-margin-left">
-                <g:layoutBody/>
             </div>
         </div>
-        <hr>
-        <footer>
-            <p>&copy; Binary Villains : Farji Naarad.</p>
-        </footer>
+    </div>
+
+    <div class="container">
+
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <alert></alert>
+
+                <div class="span12 no-margin">
+                    <g:layoutBody/>
+                </div>
+            </div>
+            <hr>
+            <footer>
+                <p>&copy; Binary Villains : Farji Naarad.</p>
+            </footer>
+        </div>
     </div>
 </div>
-<r:layoutResources/>
 </body>
 </html>

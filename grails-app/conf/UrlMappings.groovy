@@ -7,9 +7,7 @@ class UrlMappings {
 			}
 		}
 
-        "/" {
-            controller = 'login'
-        }
+        "/" (view:'index')
         "/signup"{
             controller = 'home'
             action = 'signup'
