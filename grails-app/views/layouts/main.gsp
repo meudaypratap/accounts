@@ -20,6 +20,8 @@
     <script type="text/javascript" src="${resource(dir: 'js', file: 'bootstrap.js')}"></script>
     <g:javascript src="ang.js"/>
     <script type="text/javascript" src="${resource(dir: 'js', file: 'application.js')}"></script>
+    <script type="text/javascript" src="${resource(dir: 'js', file: 'directives.js')}"></script>
+    <script type="text/javascript" src="${resource(dir: 'js', file: 'controllers.js')}"></script>
     <g:layoutHead/>
     <r:layoutResources/>
 </head>

@@ -1,13 +1,17 @@
-<h4>Login</h4>
-<hr/>
-<label for='username'>Username<span class="required-indicator">*</span></label>
-<input type='text' name='j_username' id='username' class="input-block-level" placeholder="Username" required="required"/>
+<div ng-controller="LoginCtrl">
+    <form action='${postUrl}' method='POST' autocomplete='off'>
+        <h4>Login</h4>
+        <hr/>
+        <label for='username'>Username<span class="required-indicator">*</span></label>
+        <input type='text' name='j_username' id='username' class="input-block-level" placeholder="{{username.placeholder}}" required="required" value="{{username.value}}"/>
 
-<label for='password'>Password<span class="required-indicator">*</span></label>
-<input type='password' name='j_password' id='password' class="input-block-level" placeholder="Password" required="required"/>
+        <label for='password'>Password<span class="required-indicator">*</span></label>
+        <input type='password' name='j_password' id='password' class="input-block-level" placeholder="{{password.placeholder}}" required="required" value="{{password.value}}"/>
 
-<label class="checkbox">
-    <input type='checkbox' class='chk' name='${rememberMeParameter}' id='remember_me'/>
-    <label for='remember_me'>Remember me</label>
-</label>
-<input type='submit' id="submit" class="btn btn-primary" value='Login'/>
+        <label class="checkbox">
+            <input type='checkbox' class='chk' name='${rememberMeParameter}' id='remember_me'/>
+            <label for='remember_me'>Remember me</label>
+        </label>
+        <input type='submit' id="submit" class="btn btn-primary" value='Login'/>
+    </form>
+</div>
