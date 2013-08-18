@@ -1,16 +1,14 @@
-app.directive('login', function () {
+angular.module('me.directive',[]).directive('login', function () {
     return {
         restrict: 'E',
         templateUrl: 'loginForm.html'
     }
-});
-app.directive('signup', function () {
+}).directive('signup', function () {
     return {
         restrict: 'E',
         templateUrl: 'signupForm.html'
     }
-});
-app.directive('alert', function () {
+}).directive('alert', function () {
     return {
         restrict: 'E',
         templateUrl: 'alert.html',

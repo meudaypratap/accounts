@@ -11,5 +11,4 @@ $(document).ready(function () {
     $('.pagination').children().wrapAll('<ul>');
     $('.pagination ul').children().wrap('<li>');
 });
-
-var app = angular.module('moneyEye', []);
+angular.module('moneyEye', ['me.directive', 'me.controllers', 'me.services', 'me.routeProvider']);

@@ -1,12 +1,12 @@
 <div ng-controller="LoginCtrl">
-    <form action='${postUrl}' method='POST' autocomplete='off'>
+    <form method='POST' autocomplete='off' ng-submit="login(user)">
         <h4>Login</h4>
         <hr/>
-        <label for='username'>Username<span class="required-indicator">*</span></label>
-        <input type='text' name='j_username' id='username' class="input-block-level" placeholder="{{username.placeholder}}" required="required" value="{{username.value}}"/>
+        <label for='username'>{{user.username.label}}<span class="required-indicator">*</span></label>
+        <input type='text' name='j_username' id='username' class="input-block-level" placeholder="{{user.username.label}}" required="required" value="{{user.username.value}}" ng-model="user.username.value"/>
 
-        <label for='password'>Password<span class="required-indicator">*</span></label>
-        <input type='password' name='j_password' id='password' class="input-block-level" placeholder="{{password.placeholder}}" required="required" value="{{password.value}}"/>
+        <label for='password'>{{user.password.label}}<span class="required-indicator">*</span></label>
+        <input type='password' name='j_password' id='password' class="input-block-level" placeholder="{{user.password.label}}" required="required" value="{{user.password.value}}" ng-model="user.password.value"/>
 
         <label class="checkbox">
             <input type='checkbox' class='chk' name='${rememberMeParameter}' id='remember_me'/>
